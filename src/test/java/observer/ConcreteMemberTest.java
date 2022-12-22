@@ -18,13 +18,11 @@ class ConcreteMemberTest {
 
         // Change with append the StateCollection and see if update was successful.
         observable.append("hello new members!");
-        assertEquals("hello new members!", observer1.getMyStr().toString());
-        assertEquals("hello new members!", observer2.getMyStr().toString());
+        assertEquals("hello new members!", observable.getStatesCollection().toString());
 
         // Unsubscribe observer2 (Alon) and check who got the update.
         observable.unregister(observer2);
         observable.undo();
-        assertEquals("", observer1.getMyStr().toString());
-        assertEquals("hello new members!", observer2.getMyStr().toString());
+        assertEquals("", observable.getStatesCollection().toString());
     }
 }

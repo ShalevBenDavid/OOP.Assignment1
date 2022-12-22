@@ -4,7 +4,7 @@ import java.util.Stack;
 /**
  * This class implements some of StringBuilder methods with the ability to undo.
  *
- * @author Shalev and Yuval
+ * @author Shalev and Tair
  * @version 1.0
  */
 public class UndoableStringBuilder {
@@ -18,15 +18,6 @@ public class UndoableStringBuilder {
         text = new StringBuilder();
         backup = new Stack<>();
     }
-
-    public UndoableStringBuilder(UndoableStringBuilder copy) {
-        text = new StringBuilder(copy.text);
-        backup = new Stack<>();
-        for (String s : copy.backup) {
-            backup.push(s);
-        }
-    }
-
 
     /**
      * Appends the specified string to this character sequence.

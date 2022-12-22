@@ -23,6 +23,7 @@ In observer pattern, the object that watch on the state of another object are ca
 
 - [@ShalevBenDavid](https://github.com/ShalevBenDavid)
 
+- [@TairMaz](https://github.com/TairMaz)
 
 ## ConcreteMember.class
 This class is representing the observer in this design pattern.
@@ -34,7 +35,7 @@ Every ConcreteMember has 2 private variables:
 #### `Constructor`:
 Assigns name and creates the UbdoableStringBuilder "myStr".
 #### `update()`:
-Method that recieves the change (UbdoableStringBuilder object) and deep-copy it
+Method that recieves the change (UbdoableStringBuilder object) and shallow-copy it
 to "myStr". It also prints that "name" got the update!
 #### `getMyStr()`:
 Since MyStr is private, we created a getter method.
@@ -75,14 +76,14 @@ Returns the current "statesCollection" string and "members" list.
 ## Tests
 ![App Screenshot](https://i.ibb.co/LxbtyJB/Screenshot-2022-12-17-at-11-28-54.png)
 
-![App Screenshot](https://i.ibb.co/3hBcyJN/Screenshot-2022-12-17-at-11-30-15.png)
+![App Screenshot](https://i.ibb.co/2Yyws1c/Screenshot-2022-12-22-at-14-02-21.png)
 ## Acknowledgements\Bibliography
 
  - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 - [Observer Design Pattern in Java](https://www.digitalocean.com/community/tutorials/observer-design-pattern-in-java)
 ## Feedback
 
-If you have any feedback, please reach out to us at sliv22000@gmail.com
+If you have any feedback, please reach out at sliv22000@gmail.com
 
 
 ## 🔗 Links
