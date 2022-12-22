@@ -20,10 +20,6 @@ public class GroupAdmin implements Sender {
         return statesCollection;
     }
 
-    public ArrayList<Member> getMembers() {
-        return members;
-    }
-
     @Override
     public void register(Member obj) {
         members.add(obj);

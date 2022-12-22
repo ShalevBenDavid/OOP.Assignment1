@@ -2,8 +2,6 @@ package observer;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.SortedMap;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GroupAdminTest {
