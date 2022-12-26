@@ -20,6 +20,14 @@ public class UndoableStringBuilder {
     }
 
     /**
+     *
+     * @return backup.
+     */
+    public Stack<String> getBackup() {
+        return backup;
+    }
+
+    /**
      * Appends the specified string to this character sequence.
      *
      * @param str A string to append to our "text" class field.

@@ -39,12 +39,14 @@ class GroupAdminTest {
         observable.register(observer1);
         ConcreteMember observer2 = new ConcreteMember("Alon");
         observable.register(observer2);
-        ConcreteMember observer3 = new ConcreteMember("Mike");
+
+
+        // Create observer 3 with the same name as observer 2 and register him.
+        ConcreteMember observer3 = new ConcreteMember("Alon");
         observable.register(observer3);
 
-        // Create observer 4 with the same name as observer 3.
-        ConcreteMember observer4 = new ConcreteMember("Mike");
-        observable.register(observer4);
+        // Try to register observer3 again.
+        observable.register(observer3);
 
         // Print observable object data.
         System.out.println(observable);
@@ -68,7 +70,8 @@ class GroupAdminTest {
         // Print observable object data.
         System.out.println(observable);
 
-        // Unregister observer 1.
+        // Unregister observer 1 twice.
+        observable.unregister(observer1);
         observable.unregister(observer1);
 
         // Change StatesCollection using append (which calls notifyObservers()).
@@ -92,12 +95,15 @@ class GroupAdminTest {
         observable.insert(0, "hello");
         assertEquals("hello", observable.getStatesCollection().toString());
 
-        // Call insert() with negative index to print error.
-        observable.insert(-2, "h");
-
         // Call insert () again and check to see if updated.
         observable.insert(5, " again!");
         assertEquals("hello again!", observable.getStatesCollection().toString());
+
+        // Call insert() with negative index to print error and to see no one gets update.
+        observable.insert(-2, "h");
+
+        // Print observable object data.
+        System.out.println(observable);
     }
 
     @Test
@@ -146,6 +152,12 @@ class GroupAdminTest {
         // Call delete() again to delete all and check if StatesCollection is "".
         observable.delete(0,3);
         assertEquals("lo", observable.getStatesCollection().toString());
+
+        // Call delete() with negative index to print error and to see no one gets update.
+        observable.delete(-2, 0);
+
+        // Print observable object data.
+        System.out.println(observable);
     }
 
     @Test

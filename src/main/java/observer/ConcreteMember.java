@@ -5,7 +5,7 @@ package observer;
  * This class has 2 fields: "myStr" to hold the updated UndoableStringBuilder, and a "name".
  *
  * @author Shalev and Tair
- * @version 1.1
+ * @version 1.2
  */
 public class ConcreteMember implements Member {
     private UndoableStringBuilder myStr;
