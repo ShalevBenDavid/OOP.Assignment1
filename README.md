@@ -58,11 +58,14 @@ Method that notify each observer in "members" of the change in
 Since statesCollection is private, we created a getter method.
 #### `register(Member obj)`:
 Methods to register observers (add them to "members").
+if "obj" is already subscribed, we won't add him.
 #### `unregister(Member obj)`:
 Methods to unregister observers (remove them from "members").
+If "obj" is not subscribed, we won't remove him.
 #### `insert(int offset, String obj)`:
 Method that inserts "obj" string into "statesCollection"
-starting from "offset".
+starting from "offset". In case of exception, no changes are made
+and so we don't call notifyObservers().
 #### `append(String obj)`:
 Methods that appends "obj" string to "statesCollection".
 #### `delete(int start, int end)`:
@@ -77,6 +80,33 @@ Returns the current "statesCollection" string and "members" list.
 ![App Screenshot](https://i.ibb.co/LxbtyJB/Screenshot-2022-12-17-at-11-28-54.png)
 
 ![App Screenshot](https://i.ibb.co/2Yyws1c/Screenshot-2022-12-22-at-14-02-21.png)
+## Tracking resources allocated
+In this part, we used the JVMUtilities methods to test and
+check the sizes of the objects "observable" of type GroupAdmin,
+and "observer1" and "observer2" of type ConcreteMember.
+
+This is an estimate to the efficiancy of the program.
+
+The test file is called "TestResources".
+Here are the result we got for our test:
+![App Screenshot](https://i.ibb.co/jvGkv86/Screenshot-2022-12-26-at-15-47-19.png)
+In the first part (before appending), we see the total size of
+"observable" is 752 and of both "observer1" and "observer2"
+is 240.
+
+Howerver, in the second part (after appending), we see the total
+size of "observable" decreases to 504, and the total size
+of both "observer1" and "observer2" increases to 328.
+
+The reason for the decrease is that now each ConcreteMember's
+UndoableStringBuilder points to the same location (shallow-copy)
+and so the garbage collector cleans their previous UndoableStringBuilder
+objects and thus making the ArrayList "members" smaller. Also, a reason for this decrease may be an optimiaztion.
+
+The reason for the increase is that now each ConcreteMember's
+UndoableStringBuilder points to a new location of UndoableStringBuilder
+object which is larger (since it is appended and has the previous
+state).
 ## Acknowledgements\Bibliography
 
  - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
