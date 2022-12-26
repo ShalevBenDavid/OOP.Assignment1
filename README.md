@@ -88,11 +88,12 @@ and "observer1" and "observer2" of type ConcreteMember.
 This is an estimate to the efficiancy of the program.
 
 The test file is called "TestResources".
-Here are the result we got for our test:
-![App Screenshot](https://i.ibb.co/jvGkv86/Screenshot-2022-12-26-at-15-47-19.png)
+![App Screenshot](https://i.ibb.co/WgHrGTL/Screenshot-2022-12-26-at-16-37-34.png)
+
 In the first part (before appending), we see the total size of
 "observable" is 752 and of both "observer1" and "observer2"
 is 240.
+![App Screenshot](https://i.ibb.co/pJpRTLt/Screenshot-2022-12-26-at-16-37-42.png)
 
 Howerver, in the second part (after appending), we see the total
 size of "observable" decreases to 504, and the total size
