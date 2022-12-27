@@ -31,3 +31,14 @@ hs_err_pid*
 src/.DS_Store
 target/.DS_Store
 target/classes/.DS_Store
+.idea/modules.xml
+.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml
+.idea/libraries/Maven__org_openjdk_jol_jol_core_0_16.xml
+.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_0.xml
+.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_9_0.xml
+.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_9_0.xml
+.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_0.xml
+.idea/libraries/Maven__org_jetbrains_annotations_20_1_0.xml
+.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml
+.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_19_0.xml
+.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_19_0.xml
